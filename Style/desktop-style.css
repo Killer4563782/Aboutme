@@ -1,0 +1,272 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.container {
+    max-width: 100%;
+    padding: 10px;
+    background: rgba(20, 20, 20, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease-in-out;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    animation: slideInDown 1s ease-in-out;
+    color: #1E90FF;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 20px;
+    animation: slideInLeft 1s ease-in-out;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.tab-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(20px);
+    padding: 15px;
+}
+
+.tab-content.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card {
+    background: rgba(30, 30, 30, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    transition: transform 0.5s ease; /* Added transition */
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #1E90FF;
+}
+
+.card img {
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 10px;
+    animation: zoomIn 1s ease-in-out;
+}
+
+.projects-nav {
+    position: sticky;
+    top: 0;
+    background: rgba(30, 30, 30, 0.85);
+    padding: 10px 15px;
+    z-index: 100;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+.projects-nav ul {
+    display: flex;
+    padding: 0;
+    list-style: none;
+}
+
+.projects-nav li {
+    margin: 0 10px;
+}
+
+.projects-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.projects-nav a:hover, .projects-nav a.active {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.projects-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Added gap between project cards */
+    padding: 10px;
+}
+
+.project-card {
+    background: rgba(30, 30, 30, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: calc(100% - 20px);
+    max-width: 100%;
+    margin-bottom: 20px;
+    text-align: left;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+.project-card h3 {
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.project-card p {
+    margin: 10px 0; /* Etwas mehr Abstand oben und unten */
+    overflow: visible; /* Sorgt dafür, dass die volle Beschreibung sichtbar ist */
+    white-space: normal; /* Erlaubt Zeilenumbrüche für die Beschreibung */
+}
+
+.project-card .language {
+    font-size: 1.5em;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.project-card .language i {
+    margin-right: 5px;
+}
+
+.profile-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.profile-info {
+    flex: 1 1 100%;
+}
+
+.profile-details {
+    flex: 1 1 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.detail-item {
+    width: 100%;
+    padding: 10px;
+}
+
+.skills {
+    flex: 1 1 100%;
+    text-align: left;
+}
+
+.skills ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.skills ul li i {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+.skills h3 {
+    color: #1E90FF;
+}
+
+.skills ul li i[class^="devicon-"] {
+    color: #ffffff;
+}
+
+.skills ul li i[class^="devicon-"]:hover {
+    color: #1E90FF;
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    .projects-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projects-nav li {
+        margin: 5px 0;
+    }
+
+    .project-card {
+        padding: 15px;
+    }
+
+    .profile-container {
+        flex-direction: column;
+    }
+}
