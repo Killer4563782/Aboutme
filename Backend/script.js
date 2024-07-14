@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 content.classList.remove('active');
                 if (content.id === target) {
                     content.classList.add('active');
-                    if (target === 'projects') {
+                    if (target === 'projects') 
+                    {
                         smoothScrollToTop('.tabs-container');
                     }
                 }
@@ -39,7 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchGitHubRepos('Killer4563782');
 });
 
-function fetchGitHubRepos(username) {
+function fetchGitHubRepos(username) 
+{
     fetch(`https://api.github.com/users/${username}/repos`)
         .then(response => response.json())
         .then(data => {
@@ -62,15 +64,18 @@ function fetchGitHubRepos(username) {
             });
 
             const allProjects = document.querySelectorAll('.project-card');
-            allProjects.forEach(project => {
+            allProjects.forEach(project => 
+            {
                 project.style.display = 'block';
             });
         })
         .catch(error => console.error('Error fetching repos:', error));
 }
 
-function getLanguageIcon(language) {
-    switch (language) {
+function getLanguageIcon(language) 
+{
+    switch (language) 
+    {
         case 'JavaScript':
             return 'javascript';
         case 'Python':
@@ -84,8 +89,10 @@ function getLanguageIcon(language) {
     }
 }
 
-function getLanguageClass(language) {
-    switch (language) {
+function getLanguageClass(language) 
+{
+    switch (language) 
+    {
         case 'JavaScript':
             return 'javascript';
         case 'Python':
@@ -105,9 +112,11 @@ function getLanguageClass(language) {
     }
 }
 
-function smoothScrollToTop(selector) {
+function smoothScrollToTop(selector) 
+{
     const element = document.querySelector(selector);
-    if (element) {
+    if (element) 
+        {
         window.scrollTo({
             top: element.offsetTop,
             behavior: 'smooth'
@@ -115,14 +124,122 @@ function smoothScrollToTop(selector) {
     }
 }
 
-function filterProjects(language) {
+function filterProjects(language) 
+{
     const allProjects = document.querySelectorAll('.project-card');
     allProjects.forEach(project => {
         const projectLanguage = project.querySelector('.language span').textContent.toLowerCase();
-        if (language === 'all' || projectLanguage === language.toLowerCase()) {
+        if (language === 'all' || projectLanguage === language.toLowerCase()) 
+        {
             project.style.display = 'block';
-        } else {
+        } 
+        else 
+        {
             project.style.display = 'none';
         }
     });
 }
+
+function detectDeviceAndBuildUI() 
+{
+    // Überprüfen, ob es sich um ein mobiles Gerät handelt
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    // Container-Elemente für die Navigation und den Hauptinhalt
+    const navContainer = document.getElementById('navContainer');
+    const mainContainer = document.getElementById('mainContainer');
+
+    if (isMobile) 
+        {
+        // Für mobile Geräte
+        navContainer.innerHTML = `
+            <ul id="navList">
+                <li><a href="#" data-tab="profile" class="active">Profile</a></li>
+                <li><a href="#" data-tab="projects">Projects</a></li>
+                <li><a href="#" data-tab="interests">Interests</a></li>
+                <li><a href="#" data-tab="social">Social Media</a></li>
+            </ul>
+        `;
+
+        mainContainer.innerHTML = `
+            <section id="profile" class="tab-content active">
+                <div class="card">
+                    <img src="textures/profile.png" alt="Profile Picture">
+                    <h2>Patrick</h2>
+                    <p>Hello, I'm Patrick, a 16-year-old student with a passion for programming...</p>
+                </div>
+            </section>
+            <section id="projects" class="tab-content">
+                <div class="projects-nav">
+                    <ul id="projectsNavList">
+                        <li><a href="#" class="active" data-subtab="all">All</a></li>
+                        <!-- Weitere Subtabs hinzufügen, falls benötigt -->
+                    </ul>
+                </div>
+                <div class="projects-list" id="projectsList">
+                    <!-- Projekt-Karten werden dynamisch generiert -->
+                </div>
+            </section>
+            <section id="interests" class="tab-content">
+                <div class="card">
+                    <h2>My Interests</h2>
+                    <p>Details about your interests go here.</p>
+                </div>
+            </section>
+            <section id="social" class="tab-content">
+                <div class="card">
+                    <h2>Social Media</h2>
+                    <p>Links to your social media profiles go here.</p>
+                </div>
+            </section>
+        `;
+    } 
+    else 
+    {
+        // Für Desktop-Geräte (gleiche Struktur wie vorher)
+        navContainer.innerHTML = `
+            <ul id="navList">
+                <li><a href="#" data-tab="profile" class="active">Profile</a></li>
+                <li><a href="#" data-tab="projects">Projects</a></li>
+                <li><a href="#" data-tab="interests">Interests</a></li>
+                <li><a href="#" data-tab="social">Social Media</a></li>
+            </ul>
+        `;
+
+        mainContainer.innerHTML = `
+            <section id="profile" class="tab-content active">
+                <div class="card">
+                    <img src="textures/profile.png" alt="Profile Picture">
+                    <h2>Patrick</h2>
+                    <p>Hello, I'm Patrick, a 16-year-old student with a passion for programming...</p>
+                </div>
+            </section>
+            <section id="projects" class="tab-content">
+                <div class="projects-nav">
+                    <ul id="projectsNavList">
+                        <li><a href="#" class="active" data-subtab="all">All</a></li>
+                        <!-- Weitere Subtabs hinzufügen, falls benötigt -->
+                    </ul>
+                </div>
+                <div class="projects-list" id="projectsList">
+                    <!-- Projekt-Karten werden dynamisch generiert -->
+                </div>
+            </section>
+            <section id="interests" class="tab-content">
+                <div class="card">
+                    <h2>My Interests</h2>
+                    <p>Details about your interests go here.</p>
+                </div>
+            </section>
+            <section id="social" class="tab-content">
+                <div class="card">
+                    <h2>Social Media</h2>
+                    <p>Links to your social media profiles go here.</p>
+                </div>
+            </section>
+        `;
+    }
+}
+
+// Funktion aufrufen, wenn die Seite geladen ist
+detectDeviceAndBuildUI();

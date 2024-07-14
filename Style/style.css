@@ -2,30 +2,21 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     background-color: #1a1a1a;
-    background-size: cover;
-    background-image: url("..\\textures/background.png");
     color: #ffffff;
 }
 
 .container {
     max-width: 100%;
-    background: rgba(20, 20, 20, 0.9);
     padding: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    background: rgba(20, 20, 20, 0.9);
     border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     animation: fadeIn 1s ease-in-out;
 }
 
-header, main {
+header {
     text-align: center;
-}
-
-header h1 {
     margin-bottom: 20px;
     animation: slideInDown 1s ease-in-out;
     color: #1E90FF;
@@ -41,13 +32,13 @@ nav ul {
 }
 
 nav li {
-    margin: 0 15px;
+    margin: 0 10px;
 }
 
 nav a {
     text-decoration: none;
     color: #ffffff;
-    padding: 10px 20px;
+    padding: 10px 15px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
     transition: background 0.3s ease;
@@ -62,7 +53,7 @@ nav a:hover, nav a.active {
     opacity: 0;
     transition: opacity 0.5s ease, transform 0.5s ease;
     transform: translateY(20px);
-    padding: 20px; /* Added padding */
+    padding: 15px;
 }
 
 .tab-content.active {
@@ -71,9 +62,7 @@ nav a:hover, nav a.active {
     transform: translateY(0);
 }
 
-.card 
-{
-    max-width: 700px;
+.card {
     background: rgba(30, 30, 30, 0.9);
     padding: 15px;
     border-radius: 8px;
@@ -83,10 +72,6 @@ nav a:hover, nav a.active {
     transition: transform 0.5s ease; /* Added transition */
 }
 
-.card:hover {
-    transform: scale(1.05); /* Scale effect on hover */
-}
-
 .card h2 {
     margin-top: 0;
     color: #1E90FF;
@@ -94,25 +79,22 @@ nav a:hover, nav a.active {
 
 .card img {
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    max-width: 100%;
+    height: auto;
     object-fit: cover;
     margin-bottom: 10px;
     animation: zoomIn 1s ease-in-out;
-}
-
-.tabs-container {
-    position: relative;
 }
 
 .projects-nav {
     position: sticky;
     top: 0;
     background: rgba(30, 30, 30, 0.85);
-    padding: 10px 20px;
+    padding: 10px 15px;
     z-index: 100;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
 }
 
 .projects-nav ul {
@@ -122,7 +104,7 @@ nav a:hover, nav a.active {
 }
 
 .projects-nav li {
-    margin: 0 15px;
+    margin: 0 10px;
 }
 
 .projects-nav a {
@@ -138,10 +120,10 @@ nav a:hover, nav a.active {
 }
 
 .projects-list {
-    margin-top: 30px; /* Increased margin */
     display: flex;
     flex-wrap: wrap;
     gap: 20px; /* Added gap between project cards */
+    padding: 10px;
 }
 
 .project-card {
@@ -151,7 +133,7 @@ nav a:hover, nav a.active {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     width: calc(100% - 20px);
     max-width: 100%;
-    margin: auto;
+    margin-bottom: 20px;
     text-align: left;
     transition: transform 0.5s ease, box-shadow 0.3s ease;
 }
@@ -185,38 +167,6 @@ nav a:hover, nav a.active {
     margin-right: 5px;
 }
 
-.project-card.csharp {
-    box-shadow: 0 0 10px #4CAF50; /* Grün für C# */
-}
-
-.project-card.typescript {
-    box-shadow: 0 0 10px #007ACC; /* Blau für TypeScript */
-}
-
-.project-card.cplusplus {
-    box-shadow: 0 0 10px #FF69B4; /* Pink für C++ */
-}
-
-.project-card.c {
-    box-shadow: 0 0 10px #808080; /* Grau für C */
-}
-
-.project-card.python {
-    box-shadow: 0 0 10px #FFD43B; /* Gelb für Python */
-}
-
-.project-card.javascript {
-    box-shadow: 0 0 10px #F7DF1E; /* Gelb für JavaScript */
-}
-
-.project-card.css3 {
-    box-shadow: 0 0 10px #1E90FF; /* Blau für CSS */
-}
-
-.project-card.unknown {
-    box-shadow: 0 0 10px #ffffff; /* Weiß für Unbekannt */
-}
-
 .profile-container {
     display: flex;
     flex-wrap: wrap;
@@ -224,22 +174,22 @@ nav a:hover, nav a.active {
 }
 
 .profile-info {
-    flex: 1 1 300px;
+    flex: 1 1 100%;
 }
 
 .profile-details {
-    flex: 1 1 300px;
+    flex: 1 1 100%;
     display: flex;
     flex-wrap: wrap;
 }
 
 .detail-item {
-    width: 50%;
+    width: 100%;
     padding: 10px;
 }
 
 .skills {
-    flex: 1 1 300px;
+    flex: 1 1 100%;
     text-align: left;
 }
 
@@ -272,6 +222,7 @@ nav a:hover, nav a.active {
     transform: scale(1.2);
     transition: transform 0.3s ease;
 }
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -293,33 +244,29 @@ nav a:hover, nav a.active {
 }
 
 @media (max-width: 768px) {
-    .menu-icon {
-        display: block;
-    }
-
     nav ul {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: rgba(20, 20, 20, 0.9);
-        padding: 10px 0;
-        text-align: center;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-        border-radius: 0 0 10px 10px;
+        flex-direction: column;
+        align-items: center;
     }
 
-    nav ul.active {
-        display: block;
-    }
-
-    nav ul li {
+    nav li {
         margin: 10px 0;
     }
 
-    nav a {
-        display: block;
-        padding: 10px 0;
+    .projects-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projects-nav li {
+        margin: 5px 0;
+    }
+
+    .project-card {
+        padding: 15px;
+    }
+
+    .profile-container {
+        flex-direction: column;
     }
 }
