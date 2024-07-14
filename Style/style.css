@@ -1,0 +1,291 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1a1a1a;
+    background-size: cover;
+    background-image: url("..\\textures/background.png");
+    color: #ffffff;
+}
+
+.container {
+    max-width: 800px;
+    background: rgba(20, 20, 20, 0.9);
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+header, main {
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 20px;
+    animation: slideInDown 1s ease-in-out;
+    color: #1E90FF;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 20px;
+    animation: slideInLeft 1s ease-in-out;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.tab-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(20px);
+    padding: 20px; /* Added padding */
+}
+
+.tab-content.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card {
+    background: rgba(30, 30, 30, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px; /* Increased margin */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    transition: transform 0.5s ease; /* Added transition */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #1E90FF;
+}
+
+.card img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    animation: zoomIn 1s ease-in-out;
+}
+
+.tabs-container {
+    position: relative;
+}
+
+.projects-nav {
+    position: sticky;
+    top: 0;
+    background: rgba(30, 30, 30, 0.85);
+    padding: 10px 20px;
+    z-index: 100;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.projects-nav ul {
+    display: flex;
+    padding: 0;
+    list-style: none;
+}
+
+.projects-nav li {
+    margin: 0 15px;
+}
+
+.projects-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.projects-nav a:hover, .projects-nav a.active {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.projects-list {
+    margin-top: 30px; /* Increased margin */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Added gap between project cards */
+}
+
+.project-card {
+    background: rgba(30, 30, 30, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    text-align: left;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+.project-card h3 {
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.project-card p {
+    margin: 10px 0; /* Etwas mehr Abstand oben und unten */
+    overflow: visible; /* Sorgt dafür, dass die volle Beschreibung sichtbar ist */
+    white-space: normal; /* Erlaubt Zeilenumbrüche für die Beschreibung */
+}
+
+.project-card .language {
+    font-size: 1.5em;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.project-card .language i {
+    margin-right: 5px;
+}
+
+.project-card.csharp {
+    box-shadow: 0 0 10px #4CAF50; /* Grün für C# */
+}
+
+.project-card.typescript {
+    box-shadow: 0 0 10px #007ACC; /* Blau für TypeScript */
+}
+
+.project-card.cplusplus {
+    box-shadow: 0 0 10px #FF69B4; /* Pink für C++ */
+}
+
+.project-card.c {
+    box-shadow: 0 0 10px #808080; /* Grau für C */
+}
+
+.project-card.python {
+    box-shadow: 0 0 10px #FFD43B; /* Gelb für Python */
+}
+
+.project-card.javascript {
+    box-shadow: 0 0 10px #F7DF1E; /* Gelb für JavaScript */
+}
+
+.project-card.css3 {
+    box-shadow: 0 0 10px #1E90FF; /* Blau für CSS */
+}
+
+.project-card.unknown {
+    box-shadow: 0 0 10px #ffffff; /* Weiß für Unbekannt */
+}
+
+.profile-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.profile-info {
+    flex: 1 1 300px;
+}
+
+.profile-details {
+    flex: 1 1 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.detail-item {
+    width: 50%;
+    padding: 10px;
+}
+
+.skills {
+    flex: 1 1 300px;
+    text-align: left;
+}
+
+.skills ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.skills ul li i {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+.skills h3 {
+    color: #1E90FF;
+}
+
+.skills ul li i[class^="devicon-"] {
+    color: #ffffff;
+}
+
+.skills ul li i[class^="devicon-"]:hover {
+    color: #1E90FF;
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
