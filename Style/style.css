@@ -13,9 +13,9 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 100%;
     background: rgba(20, 20, 20, 0.9);
-    padding: 20px;
+    padding: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     animation: fadeIn 1s ease-in-out;
@@ -71,11 +71,13 @@ nav a:hover, nav a.active {
     transform: translateY(0);
 }
 
-.card {
+.card 
+{
+    max-width: 700px;
     background: rgba(30, 30, 30, 0.9);
-    padding: 20px;
+    padding: 15px;
     border-radius: 8px;
-    margin-bottom: 30px; /* Increased margin */
+    margin-bottom: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     text-align: left;
     transition: transform 0.5s ease; /* Added transition */
@@ -147,8 +149,8 @@ nav a:hover, nav a.active {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 100%;
-    max-width: 400px;
+    width: calc(100% - 20px);
+    max-width: 100%;
     margin: auto;
     text-align: left;
     transition: transform 0.5s ease, box-shadow 0.3s ease;
@@ -288,4 +290,36 @@ nav a:hover, nav a.active {
 @keyframes zoomIn {
     from { transform: scale(0.8); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(20, 20, 20, 0.9);
+        padding: 10px 0;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        border-radius: 0 0 10px 10px;
+    }
+
+    nav ul.active {
+        display: block;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav a {
+        display: block;
+        padding: 10px 0;
+    }
 }
